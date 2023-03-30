@@ -10,23 +10,15 @@ function App() {
 
 
 	let value;
-	let isGrande = true;
 	let nomeUsu = 'Junin pocabosta';
-
-	const [coments, setComents] = useState([])
+	const [isGrande, setIsGrande] = useState(false)
+	const [coments, setComents] = useState([])	
 	
-	function pega(e){
-
-		value = e.target.value
-	}
+	function pega(e){value = e.target.value}
 
 	function add() {
-		setComents([...coments, value])
-
-	}
-
-	if(coments.length <= 3){
-		isGrande = false;
+		
+		setComents([...coments, value])	
 	}
 
 
@@ -37,11 +29,14 @@ function App() {
 			 		<CampoDeComentario onChange={pega} onClick={add} NomeDoUsuario={nomeUsu}/>
 				</div>
 				<div className="Comentarios">
-					{coments.map(ma => <Comment key={ma} comentario={ma} NomeDoUsuario={nomeUsu} Isgrande={isGrande} />)}
+					{coments.map((ma, index) => <Comment key={index} comentario={coments} NomeDoUsuario={nomeUsu} Isgrande={isGrande} />)}
 				</div>
 			</div>
 		</div>
 	);
 }
+
+
+
 
 export default App;

@@ -9,13 +9,8 @@ import profile from './Assets/Profile/cosa.png'
 
 
 
-export const Comment = ({comentario, NomeDoUsuario, Isgrande}) => {
+export const Comment = ({comentario, NomeDoUsuario}) => {
 
-
-	
-
-	if(!Isgrande){
-		console.log(Isgrande);
 
 	return (
 		<div className="ContainerComment">
@@ -40,7 +35,4 @@ export const Comment = ({comentario, NomeDoUsuario, Isgrande}) => {
 			</div>
 		</div>
 	);
-	}else{
-		return null;
-	}
 };
